@@ -9,12 +9,126 @@ Install Arch linux
       
 
 
-    ","inLanguage":"en","isFamilyFriendly":"true","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/cybereflex.cc\/posts\/install-arch-linux\/"},"author":{"@type":"Person","name":"cybereflex"},"creator":{"@type":"Person","name":"cybereflex"},"accountablePerson":{"@type":"Person","name":"cybereflex"},"copyrightHolder":{"@type":"Person","name":"cybereflex"},"copyrightYear":"2024","dateCreated":"2024-11-18T21:41:08.00Z","datePublished":"2024-11-18T21:41:08.00Z","dateModified":"2024-11-18T21:41:08.00Z","publisher":{"@type":"Organization","name":"cybereflex","url":"https://cybereflex.cc/","logo":{"@type":"ImageObject","url":"https:\/\/cybereflex.cc\/favicons\/favicon-32x32.png","width":"32","height":"32"}},"image":[],"url":"https:\/\/cybereflex.cc\/posts\/install-arch-linux\/","wordCount":"3","genre":[],"keywords":["arch","linux"]}</script></head><body class=body><div class=wrapper><aside class=wrapper__sidebar><div class="sidebar
+    ","inLanguage":"en","isFamilyFriendly":"true","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/cybereflex.cc\/posts\/install-arch-linux\/"},"author":{"@type":"Person","name":"cybereflex"},"creator":{"@type":"Person","name":"cybereflex"},"accountablePerson":{"@type":"Person","name":"cybereflex"},"copyrightHolder":{"@type":"Person","name":"cybereflex"},"copyrightYear":"2024","dateCreated":"2024-11-18T21:41:08.00Z","datePublished":"2024-11-18T21:41:08.00Z","dateModified":"2024-11-18T21:41:08.00Z","publisher":{"@type":"Organization","name":"cybereflex","url":"https://cybereflex.cc/","logo":{"@type":"ImageObject","url":"https:\/\/cybereflex.cc\/favicons\/favicon-32x32.png","width":"32","height":"32"}},"image":[],"url":"https:\/\/cybereflex.cc\/posts\/install-arch-linux\/","wordCount":"444","genre":[],"keywords":["arch","linux"]}</script></head><body class=body><div class=wrapper><aside class=wrapper__sidebar><div class="sidebar
 ."><div class=sidebar__content><div class=sidebar__introduction><img class=sidebar__introduction-profileimage src=/images/profile.jpg alt="profile picture"><div class=sidebar__introduction-title><a href=/></a></div><div class=sidebar__introduction-description><p>Notepad</p></div></div><ul class=sidebar__list><li class=sidebar__list-item><a href=https://github.com/cybereflex/ target=_blank rel="noopener me" aria-label=GitHub title=GitHub><i class="fa-brands fa-github fa-2x" aria-hidden=true></i></a></li><li class=sidebar__list-item><a href=https://x.com/cybereflex target=_blank rel="noopener me" aria-label=twitter title=twitter><i class="fa-brands fa-twitter fa-2x" aria-hidden=true></i></a></li><li class=sidebar__list-item><a href=mailto:chaosgensokyo@gmail.com target=_blank rel="noopener me" aria-label=e-mail title=e-mail><i class="fa-solid fa-envelope fa-2x" aria-hidden=true></i></a></li></ul></div><footer class="footer footer__sidebar"><ul class=footer__list><li class=footer__item>&copy;
 cybereflex
 2024</li></ul></footer><script type=text/javascript src=/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ=" crossorigin=anonymous></script></div></aside><main class=wrapper__main><header class=header><div class=.><a role=button class=navbar-burger data-target=navMenu aria-label=menu aria-expanded=false><span aria-hidden=true class=navbar-burger__line></span>
 <span aria-hidden=true class=navbar-burger__line></span>
 <span aria-hidden=true class=navbar-burger__line></span></a><nav class=nav><ul class=nav__list id=navMenu><li class=nav__list-item><a href=/ title>Home</a></li><li class=nav__list-item><a href=/posts/ title>Posts</a></li><li class=nav__list-item><a href=/tags/ title>Tags</a></li><li class=nav__list-item><a href=/about/ title>About</a></li></ul><ul class="nav__list nav__list--end"><li class=nav__list-item><div class=themeswitch><a title="Switch Theme"><i class="fas fa-adjust fa-fw" aria-hidden=true></i></a></div></li></ul></nav></div></header><div class="post
-."><div class=post__content><h1>Install Arch Linux</h1><h2 id=hyper-v>Hyper-V</h2><h2 id=windows-双系统>Windows 双系统</h2></div><div class=post__footer><span><a class=tag href=/tags/arch/>arch</a><a class=tag href=/tags/linux/>linux</a></span></div></div></main></div><footer class="footer footer__base"><ul class=footer__list><li class=footer__item>&copy;
+."><div class=post__content><h1>Install Arch Linux</h1><h2 id=hyper-v-desktop>Hyper-V Desktop</h2><h3 id=通过-archinstall-安装系统>通过 archinstall 安装系统</h3><ol><li>设置 Mirrors 为 China</li><li>Disk Configuration 设置分区</li><li>Bootloader 默认 systemd-boot 也可以切换为 grub</li><li>设置Root password</li><li>Profile 选择 Desktop KDE-plasma</li><li>Network Configuration 选择 use NetworkManager</li><li>Additional Packages 可选择安装 noto-fonts fcitx5</li><li>Timezone 设置为 Shanghai</li></ol><h3 id=高分辨率显示器-hyper-v-不支持修改对应分辨率问题解决方案>高分辨率显示器 Hyper-V 不支持修改对应分辨率问题解决方案</h3><p>首先关闭 Hyper-V 虚拟机</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-powershell data-lang=powershell><span class=line><span class=cl><span class=nb>Set-VMVideo</span> <span class=n>-VMName</span> <span class=n>ArchLinux</span> <span class=n>-HorizontalResolution</span> <span class=mf>2560</span> <span class=n>-VerticalResolution</span> <span class=mf>1440</span> <span class=n>-ResolutionType</span> <span class=n>single</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>Set-VM</span> <span class=n>-Name</span> <span class=n>ArchLinux</span> <span class=p>-</span><span class=n>-EnhancedSessionTransportType</span> <span class=n>HvSocket</span>
+</span></span></code></pre></div><h4 id=wayland>wayland</h4><ol><li>grub</li></ol><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>sudo vim /etc/default/grub <span class=c1>## 在 options 后面追加 video=Virtual-1:2560x1440, 具体配置得看当前虚拟显示器名称和分辨率</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>sudo update-grub
+</span></span></code></pre></div><ol start=2><li>systemd-boot</li></ol><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>sudo vim /boot/loader/entries/arch.conf <span class=c1>## options 最后追加 video=Virtual-1:2560x1440, 具体配置得看当前虚拟显示器名称和分辨率</span>
+</span></span></code></pre></div><p>修改完成后重启即可</p><h4 id=x11>x11</h4><p>临时生效，重启后失效，可通过 xrandr 和 cvt 创建分辨率并设置</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>cvt <span class=m>2560</span> <span class=m>1440</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>xrandr --newmode <span class=s2>&#34;2560x1440_60.00&#34;</span> <span class=c1>## 后面追加上面cvt 生成的 modeline</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>xrandr --addmode Virtual-1 <span class=s2>&#34;2560x1440_60.00&#34;</span> <span class=c1>## 虚拟显示器追加分辨率</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>xrandr --output Virtual-1 --mode <span class=s2>&#34;2560x1440_60.00&#34;</span> <span class=c1>## 应用新增的分辨率</span>
+</span></span></code></pre></div><p>永久生效</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl><span class=c1># 新增以下配置到 ~/.xprofile 或 ～/.xinitrc</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>xrandr --newmode <span class=s2>&#34;2560x1440_60.00&#34;</span> <span class=c1>## 后面追加上面对应分辨率 cvt 生成的 modeline</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>xrandr --addmode Virtual-1 <span class=s2>&#34;2560x1440_60.00&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>xrandr --output Virtual-1 --mode <span class=s2>&#34;2560x1440_60.00&#34;</span>
+</span></span></code></pre></div><h2 id=windows-双系统>Windows 双系统</h2><p>预先从 Windows C 盘缩容 256G 的大小</p><h3 id=连接无线网络>连接无线网络</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>iwctl
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>device list 
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>station wlan0 scan
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>station wlan0 get-networks
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>station wlan0 connect <span class=nv>$SSID</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>exit</span>
+</span></span></code></pre></div><h3 id=同步时钟>同步时钟</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>hwclock --systohc --utc
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>timedatectl set-ntp <span class=nb>true</span>
+</span></span></code></pre></div><h3 id=磁盘分区与挂载>磁盘分区与挂载</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>fdisk -l <span class=c1>## 列出磁盘情况，找到缩容的磁盘</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>cfdisk /dev/nvme0n1 <span class=c1>## 对 /dev/nvme0n1 进行分区，Swap 分区 4G，剩下容量为 Linux filesystem</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>mkswap /dev/nvme0n1p4 <span class=c1>## 格式化交换分区</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>mkfs.ext4 /dev/nvme0n1p5 <span class=c1>## 将 Linux filesystem 分区格式化为 ext4</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>mkdir /mnt/boot <span class=c1>## 创建 boot 目录准备挂载引导分区</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>mount /dev/nvme0n1p5 /mnt <span class=c1>## 挂载 Linux filesystem 到 /mnt 上</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>mount /dev/nvme0n1p1 /mnt/boot <span class=c1>## 将 Windows 的引导分区挂载到 /mnt/boot 目录上</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>swapon /dev/nvme0n1p4 <span class=c1>## 启用交换分区</span>
+</span></span></code></pre></div><h3 id=系统与软件安装与配置>系统与软件安装与配置</h3><h4 id=切换-pacman-源>切换 pacman 源</h4><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>reflector --country <span class=s1>&#39;China&#39;</span> --sort rate --save /etc/pacman.d/mirrorlist
+</span></span></code></pre></div><h4 id=安装系统和一些工具>安装系统和一些工具</h4><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>pacstrap /mnt base base-devel linux linux-firmware vim e2fsprogs ntfs-3g wget 
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>genfstab -U -p /mnt &gt;&gt; /mnt/etc/fstab <span class=c1>## 上一步安装完成后写入 fstab 文件</span>
+</span></span></code></pre></div><h5 id=设置登陆用户>设置登陆用户</h5><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>arch-chroot /mnt /bin/bash <span class=c1>## 进入安装好的系统</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>passwd  <span class=c1>## 设置 root 用户名密码</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>useradd -m -G wheel -s /bin/bash <span class=nv>$USERNAME</span> <span class=c1>## 新增普通用户</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>passwd <span class=nv>$USERNAME</span> <span class=c1>## 设置普通用户密码</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>visudo /etc/sudoers <span class=c1>## 编辑 sudoers 使 wheel 用户组下用户可使用 sudo 提权， </span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># /etc/sudoers 取消下面内容的注释
+</span></span><span class=line><span class=cl>%wheel ALL=(ALL) ALL
+</span></span></code></pre></div><h5 id=设置主机名和-hosts>设置主机名和 hosts</h5><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl><span class=nb>echo</span> archlinux &gt;&gt; /etc/hostname <span class=c1>## 设置主机名</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>vim /etc/hosts <span class=c1>## 写入 localhost 映射</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># /etc/hosts 写入以下内容
+</span></span><span class=line><span class=cl>127.0.0.1	localhost
+</span></span><span class=line><span class=cl>::1		    localhost
+</span></span><span class=line><span class=cl>127.0.1.1   archlinux.localdomain   archlinux
+</span></span></code></pre></div><h5 id=设置语言环境和时区>设置语言环境和时区</h5><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>vim /etc/locale.gen
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># /etc/locale.gen 取消下面内容的注释
+</span></span><span class=line><span class=cl>en_US.UTF-8 UTF-8
+</span></span><span class=line><span class=cl>zh_CN.UTF-8 UTF-8
+</span></span><span class=line><span class=cl>zh_TW.UTF-8 UTF-8
+</span></span><span class=line><span class=cl>ja_JP.UTF-8 UTF-8
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>locale-gen 
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>echo</span> <span class=nv>LANG</span><span class=o>=</span>en_US.UTF-8 &gt; /etc/locale.conf <span class=c1>## 设置当前语言环境为 en utf8</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime <span class=c1>## 设置时区为上海</span>
+</span></span></code></pre></div><h5 id=安装微码和配置引导>安装微码和配置引导</h5><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>pacman -S amd-ucode <span class=c1>## AMD cpu</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>pacman -S intel-ucode <span class=c1>## intel cpu</span>
+</span></span></code></pre></div><p>引导方式以下两种可二选一</p><p>[grub]</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>pacman -S grub efibootmgr os-prober
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>grub-mkconfig -o /boot/grub/grub.cfg
+</span></span></code></pre></div><p>[systemd-boot]</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>bootctl install
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>vim /boot/loader/loader.conf <span class=c1>## 编辑此文件写入配置</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-gdscript3 data-lang=gdscript3><span class=line><span class=cl><span class=c1># /boot/loader/loader.conf 配置如下</span>
+</span></span><span class=line><span class=cl><span class=n>default</span> <span class=n>arch</span><span class=o>.</span><span class=n>conf</span>
+</span></span><span class=line><span class=cl><span class=n>timeout</span> <span class=mi>3</span>
+</span></span><span class=line><span class=cl><span class=n>console</span><span class=o>-</span><span class=n>mode</span> <span class=n>keep</span>
+</span></span><span class=line><span class=cl><span class=n>editor</span> <span class=n>no</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>lsblk -f <span class=c1>## 获取根路径挂载磁盘的 UUID, 需要写下面配置文件的 options</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>vim /boot/loader/entries/arch.conf <span class=c1>## 创建此文件并写入以下配置</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-gdscript3 data-lang=gdscript3><span class=line><span class=cl><span class=c1># /boot/loader/entries/arch.conf 配置如下</span>
+</span></span><span class=line><span class=cl><span class=n>title</span>   <span class=n>Arch</span> <span class=n>Linux</span>
+</span></span><span class=line><span class=cl><span class=n>linux</span>   <span class=o>/</span><span class=n>vmlinuz</span><span class=o>-</span><span class=n>linux</span>
+</span></span><span class=line><span class=cl><span class=n>initrd</span>  <span class=o>/</span><span class=n>amd</span><span class=o>-</span><span class=n>ucode</span><span class=o>.</span><span class=n>img</span>
+</span></span><span class=line><span class=cl><span class=n>initrd</span>  <span class=o>/</span><span class=n>initramfs</span><span class=o>-</span><span class=n>linux</span><span class=o>.</span><span class=n>img</span>
+</span></span><span class=line><span class=cl><span class=n>options</span> <span class=n>root</span><span class=o>=</span><span class=n>UUID</span><span class=o>=</span><span class=n>fce2bf25</span><span class=o>-</span><span class=mi>8543</span><span class=o>-</span><span class=mi>495</span><span class=n>b</span><span class=o>-</span><span class=mi>9104</span><span class=o>-</span><span class=n>c2f22749c9a7</span> <span class=n>rw</span> 
+</span></span></code></pre></div><h5 id=安装桌面环境>安装桌面环境</h5><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>pacman -S plasma sddm konsole dolphin ark kate firefox networkmanager
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>systemctl <span class=nb>enable</span> sddm
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>systemctl <span class=nb>enable</span> NetworkManager
+</span></span></code></pre></div><p>至此安装已完成，然后重启电脑，默认会引导进入 linux, 开机后可安装中文字体和中文输入法</p><h3 id=安装-noto-fonts-和-fcitx5>安装 noto-fonts 和 fcitx5</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>pacman -S noto-fonts noto-fonts-emoji noto-fonts-cjk noto-fonts-extra
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>pacman -S fcitx5 fcitx5-im fcitx5-chinese-addons
+</span></span></code></pre></div></div><div class=post__footer><span><a class=tag href=/tags/arch/>arch</a><a class=tag href=/tags/linux/>linux</a></span></div></div></main></div><footer class="footer footer__base"><ul class=footer__list><li class=footer__item>&copy;
 cybereflex
 2024</li></ul></footer><script type=text/javascript src=/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ=" crossorigin=anonymous></script></body></html>
