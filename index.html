@@ -6,25 +6,11 @@ cybereflex
 <span aria-hidden=true class=navbar-burger__line></span>
 <span aria-hidden=true class=navbar-burger__line></span></a><nav class=nav><ul class=nav__list id=navMenu><li class=nav__list-item><a class=nav__link--active href=/ title>Home</a></li><li class=nav__list-item><a href=/posts/ title>Posts</a></li><li class=nav__list-item><a href=/tags/ title>Tags</a></li><li class=nav__list-item><a href=/about/ title>About</a></li></ul><ul class="nav__list nav__list--end"><li class=nav__list-item><div class=themeswitch><a title="Switch Theme"><i class="fas fa-adjust fa-fw" aria-hidden=true></i></a></div></li></ul></nav></div></header><div class="post
 ."><div class=post__content></div></div><div class="post
+."><div class=post__content><h3><a href=/posts/qnap-464c-command/>QNAP 464C SHELL COMMAND</a></h3><p>威联通 464c 常用 Shell 命令</p></div><div class=post__footer><em class="fas fa-calendar-day"></em>
+<span class=post__footer-date>Mon, Jul 14, 2025
+</span><span><a class=tag href=/tags/nas/>NAS</a><a class=tag href=/tags/linux/>linux</a></span></div></div><div class="post
 ."><div class=post__content><h3><a href=/posts/install-arch-linux/>INSTALL ARCH LINUX</a></h3><p>Hyper-V 以及 Windows 双系统安装 Arch Linux 记录总结</p></div><div class=post__footer><em class="fas fa-calendar-day"></em>
 <span class=post__footer-date>Mon, Nov 18, 2024
-</span><span><a class=tag href=/tags/arch/>arch</a><a class=tag href=/tags/linux/>linux</a></span></div></div><div class="post
-."><div class=post__content><h3><a href=/posts/qnap-464c-command/></a></h3><p><h1 id=威联通-464c-nas>威联通 464c NAS</h1><h2 id=系统启动自动执行脚本>系统启动自动执行脚本</h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>sudo mount <span class=k>$(</span>/sbin/hal<span class=se>\_</span>app --get<span class=se>\_</span>boot<span class=se>\_</span>pd port<span class=se>\_</span>id<span class=o>=</span>0<span class=k>)</span><span class=m>6</span> /tmp/config
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>touch /tmp/config/autorun.sh
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>chmod +x /tmp/config/autorun.sh
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>umount /tmp/config
-</span></span></code></pre></div><h2 id=后台执行任务>后台执行任务</h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl><span class=c1># option 1</span>
-</span></span><span class=line><span class=cl>screen -dmS frp-client /home/admin/frp/frpc -c /home/admin/frp/frpc.toml
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c1># option 2</span>
-</span></span><span class=line><span class=cl>setsid /home/admin/frp/frpc -c /home/admin/frp/frpc.toml <span class=p>&amp;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c1># option 3</span>
-</span></span><span class=line><span class=cl>nohup /home/admin/frp/frpc -c /home/admin/frp/frpc.toml <span class=p>&amp;</span>
-</span></span></code></pre></div></p></div><div class=post__footer><em class="fas fa-calendar-day"></em>
-<span class=post__footer-date>Mon, Jan 1, 0001</span></div></div><div class=pagination></div></main></div><footer class="footer footer__base"><ul class=footer__list><li class=footer__item>&copy;
+</span><span><a class=tag href=/tags/arch/>arch</a><a class=tag href=/tags/linux/>linux</a></span></div></div><div class=pagination></div></main></div><footer class="footer footer__base"><ul class=footer__list><li class=footer__item>&copy;
 cybereflex
 2025</li></ul></footer><script type=text/javascript src=/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ=" crossorigin=anonymous></script></body></html>
