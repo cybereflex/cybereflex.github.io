@@ -1,1 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on notepad of cybereflex</title><link>https://cybereflex.cc/posts/</link><description>Recent content in Posts on notepad of cybereflex</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 18 Nov 2024 21:41:08 +0800</lastBuildDate><atom:link href="https://cybereflex.cc/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Install Arch linux</title><link>https://cybereflex.cc/posts/install-arch-linux/</link><pubDate>Mon, 18 Nov 2024 21:41:08 +0800</pubDate><guid>https://cybereflex.cc/posts/install-arch-linux/</guid><description>Hyper-V 以及 Windows 双系统安装 Arch Linux 记录总结</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on notepad of cybereflex</title><link>https://cybereflex.cc/posts/</link><description>Recent content in Posts on notepad of cybereflex</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 18 Nov 2024 21:41:08 +0800</lastBuildDate><atom:link href="https://cybereflex.cc/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Install Arch linux</title><link>https://cybereflex.cc/posts/install-arch-linux/</link><pubDate>Mon, 18 Nov 2024 21:41:08 +0800</pubDate><guid>https://cybereflex.cc/posts/install-arch-linux/</guid><description>Hyper-V 以及 Windows 双系统安装 Arch Linux 记录总结</description></item><item><title/><link>https://cybereflex.cc/posts/qnap-464c-command/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://cybereflex.cc/posts/qnap-464c-command/</guid><description>&lt;h1 id="威联通-464c-nas">威联通 464c NAS&lt;/h1>
+&lt;h2 id="系统启动自动执行脚本">系统启动自动执行脚本&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">sudo mount &lt;span class="k">$(&lt;/span>/sbin/hal&lt;span class="se">\_&lt;/span>app --get&lt;span class="se">\_&lt;/span>boot&lt;span class="se">\_&lt;/span>pd port&lt;span class="se">\_&lt;/span>id&lt;span class="o">=&lt;/span>0&lt;span class="k">)&lt;/span>&lt;span class="m">6&lt;/span> /tmp/config
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">touch /tmp/config/autorun.sh
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">chmod +x /tmp/config/autorun.sh
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">umount /tmp/config
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="后台执行任务">后台执行任务&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># option 1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">screen -dmS frp-client /home/admin/frp/frpc -c /home/admin/frp/frpc.toml
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># option 2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">setsid /home/admin/frp/frpc -c /home/admin/frp/frpc.toml &lt;span class="p">&amp;amp;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># option 3&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">nohup /home/admin/frp/frpc -c /home/admin/frp/frpc.toml &lt;span class="p">&amp;amp;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
